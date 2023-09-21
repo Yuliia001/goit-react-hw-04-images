@@ -19,9 +19,8 @@ export const App = () => {
   const [totalImages, setTotalImages] = useState(0);
 
   useEffect(() => {
+    if (!query) return;
     async function getQuery() {
-      if (!query || !page) return;
-
       try {
         setIsLoading(true);
         setError(false);
